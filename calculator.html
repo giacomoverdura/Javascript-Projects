@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Calculator</title>
+    </head>
+    <style>
+    * {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    body {
+        background-color: rgba(0, 0, 0, 0.898);
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    table tr, table td {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    
+    input[type=text] {
+        width: 266px;
+        height: 70px;
+        background-color: transparent;
+        border: none;
+        color: rgb(255, 252, 248);
+        font-size: 50px;
+        text-align: end;
+    }
+
+    button {
+        margin: 0;
+        width: 100%;
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+    <body>
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" id="inputField" disabled> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="document.getElementById('inputField').value = numberInput = ''">C</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '/'; document.getElementById('inputField').value += '÷'">÷</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '*'; document.getElementById('inputField').value += '×'">×</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput = numberInput.slice(0,-1); document.getElementById('inputField').value = numberInput">del</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="numberInput += '7'; document.getElementById('inputField').value += '7'">7</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '8'; document.getElementById('inputField').value += '8'">8</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '9'; document.getElementById('inputField').value += '9'">9</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '-'; document.getElementById('inputField').value += '-'">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="numberInput += '4'; document.getElementById('inputField').value += '4'">4</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '5'; document.getElementById('inputField').value += '5'">5</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '6'; document.getElementById('inputField').value += '6'">6</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '+'; document.getElementById('inputField').value += '+'">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="numberInput += '1'; document.getElementById('inputField').value += '1'">1</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '2'; document.getElementById('inputField').value += '2'">2</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '3'; document.getElementById('inputField').value += '3'">3</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput = eval(numberInput); document.getElementById('inputField').value = numberInput = numberInput.toString()">=</button>
+                        <!-- document.getElementById('inputField').value = numberInput = ''; -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="numberInput += '%'; document.getElementById('inputField').value += '%'">%</button>
+                    </td>
+                    <td colspan="2">
+                        <button onclick="numberInput += '0'; document.getElementById('inputField').value += '0'">0</button>
+                    </td>
+                    <td>
+                        <button onclick="numberInput += '.'; document.getElementById('inputField').value += '.'">.</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            let numberInput = '';
+        </script>
+    </body>
+</html>
